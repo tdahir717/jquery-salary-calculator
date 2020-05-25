@@ -7,7 +7,11 @@ function onReady() {
     $(`#addEmployeesBtn`).on(`click`, addEmployee);
     $(`#addEmployeesBtn`).on(`click`, appendData);
     $(`#addEmployeesBtn`).on(`click`, calculateMonthlySalary);
+    $(`tbody`).on(`click`, `.deleteBtn`, deleteEmployee);
+    // $(`totalMonthlySalary`).on(`click`, `.deleteBtn`, deleteEmployee);
+
 }
+    
 
 
 //adding employee logic
@@ -24,7 +28,7 @@ function addEmployee() {
         jobTitle: $(`#jobTitleIn`).val(),
         annualSalary: $(`#annualSalaryIn`).val()
     }
-    console.log('employeeToAdd', employeeToAdd);
+    // console.log('employeeToAdd', employeeToAdd);
 
     //push into array
     employeeData.push(employeeToAdd);
@@ -55,6 +59,7 @@ function appendData() {
                 <td>${employeeData[i].idNumber}</td>
                 <td>${employeeData[i].jobTitle}</td>
                 <td>${employeeData[i].annualSalary}</td>
+                <td><button class="deleteBtn">Delete</button></td>
             </tr>`
         )
        
@@ -65,3 +70,10 @@ function appendData() {
             $(`#annualSalaryIn`).val('')
     }
 }// end append
+
+// delete button
+function deleteEmployee(){
+    $(this).closest(`tr`).remove();
+}
+
+
