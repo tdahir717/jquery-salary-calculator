@@ -3,7 +3,9 @@ $(document).ready(onReady);
 //onReady
 
 function onReady(){
-    console.log('in JQ');
+    // console.log('in JQ');
+    $(`#addEmployeesBtn`).on(`click`, addEmployee);
+    $(`#addEmployeesBtn`).on(`click`, appendData);
     
 }
 
@@ -35,6 +37,23 @@ function addEmployee(){
 
 //appending
 function appendData() {
-    
+    let el = $(`tbody`)
+    el.empty();
+    for (let i=0; i < employeeData.length; i++){
+        el.append(
+            `<tr>
+                <td>${employeeData[i].firstName}</td>
+                <td>${employeeData[i].lastName}</td>
+                <td>${employeeData[i].idNumber}</td>
+                <td>${employeeData[i].jobTitle}</td>
+                <td>${employeeData[i].annualSalary}</td>
+            </tr>`
+        )
+        $(`#firstNameIn`).val(''),
+        $(`#lastNameIn`).val(''),
+        $(`#idNumberIn`).val(''),
+        $(`#jobTitleIn`).val(''),
+        $(`#annualSalaryIn`).val('')
+    }
 }
 
