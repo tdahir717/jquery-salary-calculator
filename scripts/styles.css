@@ -1,3 +1,22 @@
 .redAlert {
     color: red
 }
+body {
+    background-color:rgb(63, 201, 82)
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(109, 230, 125) ;
+    border: dashed lightpink ;
+}
+
+h2 {
+    margin: 10px;
+}
+
+h3 {
+    text-align: right;
+    margin: 100px;
+    
+}
