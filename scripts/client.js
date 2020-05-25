@@ -34,5 +34,7 @@ function addEmployee(){
 
 
 //appending
-
+function appendData() {
+    
+}
 
