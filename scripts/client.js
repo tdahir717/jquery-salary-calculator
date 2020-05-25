@@ -12,8 +12,6 @@ function onReady() {
 
 }
     
-
-
 //adding employee logic
 
 let employeeData = [];
@@ -44,8 +42,15 @@ function calculateMonthlySalary() {
         // Number(Math.round(number + 'e2') + 'e-2'); found on the stackOverflowt. Round 2 decimal spots.
         el.empty();
         el.append(monthlyCost);
+
+        if (monthlyCost > 20000){
+            console.log('OVER $20,000 !!!');
+
+            $(`#totalMonthlySalary`).addClass(`redAlert`)
+            
+        }
     }
-}
+}// end calculation
 
 //appending
 function appendData() {
@@ -74,6 +79,6 @@ function appendData() {
 // delete button
 function deleteEmployee(){
     $(this).closest(`tr`).remove();
-}
+} // end delete
 
 
